@@ -14,18 +14,3 @@ from "CharlotteChaze/BreakIntoTech"."netflix_titles_info" titles
 left join "CharlotteChaze/BreakIntoTech"."netflix_people" people
 on titles.show_id=people.show_id
 where titles.title='Bright Star'
-
-select title, release_year
-from "CharlotteChaze/BreakIntoTech"."netflix_titles_info"
-where type='Movie'
-order by release_year asc
-limit 1;
-
-
-select title, release_year 
-from "CharlotteChaze/BreakIntoTech"."netflix_titles_info"
-where type = 'Movie'
-and release_year <= 
-(select min(release_year) 
-from "CharlotteChaze/BreakIntoTech"."netflix_titles_info"
-where type = 'Movie'); 
